@@ -1,0 +1,28 @@
+digraph {
+	ANT [shape=box]
+	ANT->Online; // [weight=20];
+	ANT->RecordServer [style=dotted]; //set eage style ;
+	ANT->Protocol;
+	ANT->Public;
+	ANT->Register;
+	ANT->LibAnt;
+	ANT->Login;
+
+	Online->Core;
+	Core->Battle;
+	Core->Game;
+	Core->Server;
+	Core->MsgHanler;
+	//get node attr
+	node [shape=box, style=filled];
+	Core->Script;
+
+	ANT->Common [label="eage"]; //给边加文字
+	//set follow edge color is red
+	edge [color=red];
+
+	/*一对多可以这样写 */
+	RecordServer-> {Proxy; Record; base;}
+}
+
+
