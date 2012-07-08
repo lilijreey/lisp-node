@@ -1,0 +1,523 @@
+//search EE find knowledge points
+"环境设置"
+EE 1:RTEL打印方式 The variable *print-case* controls how symbols
+    will be printed. By defualt, the value of this variable is :upcase,
+    but it can be changed to :downcase or : capitalize
+
+EE
+'t'
+booler value
+e.g (and t nil)
+    (type-of t)
+#save REPL envirmoent
+(saveinitmem "savename")
+#load initmem to REPL
+clisp -M memname
+
+# load func can be load a file
+(load "file-naem")
+'if' 
+usage: (if (test) (true-body) (fals-body))
+只有一个分支会被求值
+
+Lisp 的两大模式：code mode  e.g. (list
+                 data mode  e.g. '(list)
+				 Placing a quote in fornt of lists so that 
+				 they won't be evaluated as a command is called
+				 quoting. By using quotin, you can tell Lisp, 
+				 "This next part isn't a command. It's just my
+				 a chunk of data for my program
+'progn' 在只允许一个expression 增加command
+usage: (if (oddp 5)
+	   (progn (let a 5) (+ a 4))
+	   'other)
+'when' 
+usage: (when (test) 
+		...body)
+当test为真时，执行body，body可以是多条exprosions
+返回最后一个expression的结果
+
+笔记
+定义全局变量
+use 'defparameter' function create
+globally (top-level definition) variable
+e.g. (defparameter *va* 1)
+用asterisks包围变量名是liser定义globle变量的传统
+
+use 'defvar' 于defparamter 不同 用defvar定义的
+变量值不能被重定义, 但可被改变
+'unless' 
+usage: (unless (test) 
+		...body)
+当test为假时，执行body，body可以是多条exprosions
+返回最后一个expression的结果
+
+定义全局函数
+use 'defun'
+e.g. (defun function_name (arguments)
+         ... )
+赋值
+'setf' (Macro) the name SETF stands for "set field"
+usage: 1 updata a gloabe variable
+       2 definition a variable e.g (setf *aa* 4)
+'cond' :最牛比的Condition,可以代替其他Condition expresions
+usage:
+(cond (test1 consequents1) #consequents 可以是多个expresiones
+      (test2 consequents2)
+      ...body...
+      )
+e.g.
+(cond ((oddp 4) '4)
+      ((oddp 3) '3))
+cond form are always checked from the top down, until a true brench
+
+'incf' (Macro)
+usage: add a numeric for variable
+(incf a 5) equte (setf a (+ 5 a))
+'case'
+使用 eq比较
+
+'and' 和C一样短路求值
+usage: (and (test1) (test2) ...)
+'decf' (Macro)
+usage: sub a numeric for variable
+(decf a 5) equte (setf a (- 5 a))
+
+'or' 和C一样短路求值
+usage: (and (test1) (test2) ...)
+'push', 'pop'
+usage: pushdown a value to list 
+       popoff a value from list 
+e.g (push 4 *bb*)
+    (pop *bb*) return 4
+
+'member' check for list membership
+return: list of begin with member, if not find return NIL
+usage: (member 1 '(3 4 1 ))
+位移
+'ash'
+(ash v offest) 把v左右移动 offfest位 +left -right
+
+'find-if' find the first number that is correct test-func
+usage: (find-if #'oddp '(3 4 5 2))
+减1
+(1-  vaule)
+加1
+(1+  vaule)
+
+定义局部变量
+'let'
+usage: (let (variable declarations)
+            ...body...)
+'step' : 一步步的执行一个expresiones
+usage: (step (expresiones))
+
+EE
+'quote'
+return its unevalued argument
+' is  shorthand for the quote
+
+EE
+'function' Or #'
+Just as ' shorthand for the quote function.
+#' is shorthand for the FUNCTION
+Special function
+usage(function cons)
+return the functional interpretation of its
+unevaluated argument. more info see gentle p255
+
+EE :about eq* operator more info see Gentle 197
+'eq' 
+usage: to compare symbols
+compare only if they hae the same address
+compare only if they hae the same address
+用于比较两个符号之否指向一个东西（地址)
+永远不要用eq比较number(实现不一样）
+
+'eql'
+uage: like eq, and handles numbers and characters
+和在对于非number的其他obj上和eq一样，在number上比较value
+
+'equal'
+usage: everying except symbols
+
+'equalp'
+usage: like equal but is no 严格
+e.g
+(equalp 'a 'A) T
+(equalp '3 '3.0) T
+
+'='
+usage: just comparing numbers
+
+在一段string中加入执行语句
+`(there is a ,(fun ... ) going ,(fun ...))
+再上句中：逗号是开启执行模式，叫做flop
+
+'assoc':在一个table中，查找给定的key的entry
+usage: (assoc 'key find-table)
+e.g (assoc 'keyword *table*)
+
+'mapcar':想c++中的for_each对每个元素依次调用函数
+usage: takes another function and a list, and then applies this 
+function taking one element from ecah at each step
+第一个函数需要几个参数，就提供几个list
+e.g.
+(let (
+	  (a 4)
+      (b 3)
+	 )
+     (+ a b))
+(mapcar #'sqrt '(1 2 3 4))
+return a new list 'print'
+usage:每次都会输出一个换行符
+
+定义局部函数
+'flet'
+usage: (flet ((function-name(arguments)
+                   ...func-body...))
+           ...body....)
+'prin1'
+usage:和print一样只是不输出换行符
+
+'princ'
+usage:like prin1,but print that data in a way humans would prefer
+
+'let':用于赋值局部变量
+usage: (let ((assit1) 
+	     (assit2) 
+	     ...
+	     (assitn))
+		...use bady..)
+只有在letblock中的code才能看见let赋值的变量
+
+EE
+'let*'
+
+'#\a :一个字符，发需要
+
+'eval'
+usage: 执行一个变量中的代码
+e.g (defparameter code '(+ 1 2))
+(eval code)
+
+
+list 的几种分类
+1:Exotic lists
+e.g. (cons 1 (cons 2 (cons 3 nil)))
+
+2:Dotted lists
+e.g. (cons 1 (cons 2 3))
+In Lisp that ends in something other than a nil is 
+referred to as a dotted list.
+'(1 . (2 . (3 . nil)))
+
+3:Cirular lists
+(defparameter foo '(1 2 3))
+(setf (cdddr foo) foo)
+
+4 Association lists Or alist
+An alist consist of key/value paris stored in list 
+((index1 . x1) (index2 . x2) ... (indexn . xn))
+
+Pairs
+e.g.(cons 3 4)
+
+list 表达的几种结构
+list, set, table(Association list)
+
+'push'
+usage: push a new item to the front of an existing list
+e.g (push 'new *xx*)
+
+'substitute-if'
+usage: 替换一个使谓词函数为真的结果，为给定值 
+(substitute-if 0 #'oddp '(1 2 3 4))
+
+'append'
+usage: takes two lists as input, 
+returen a list containing all the elements of
+the first list followed by all the elements of the second
+
+//对List的操作
+EE
+'first' = 'car'
+'second'
+'third'
+
+EE
+//return a list no a element
+'last' //return a list of the last n elements (defaults to 1)
+e.g.
+(last '(a b c) 2)
+(flet ((f1 (n)
+           (+1 n))
+       (f2 (n)
+	       (-1 n)))
+    (f1 (f2 3)))
+
+'labels' :To make funciton names available in definitios. so it can
+call itself "recursive"
+EE
+'rest'
+usag: == cdr
+
+EE 
+'mapcar'
+(mapcar #'func lists ...)
+return: a list the built by calling the 
+function on every element of the input list
+mapcar只对顶层cell执行func
+e.g.
+(mapcar '#+ '(1 2 3) '(2 3 4))
+(labels ((a (n) (+ 4 n))
+         (b (n) (a n) ))
+        (b 12))
+
+'princ' :display a string
+e.g 
+(princ "hello lisp")
+EE
+'trace'
+usage: show how func work
+e.g.  if your want shou func XX 
+first your entry (trace XX) 
+second use xx func
+
+'untrace'
+usage: 取消trace
+'Common' 注释
+;
+like // in C++
+
+EE
+IO
+Higher-Order function
+操作函数的函数。
+
+EE 'character strings'
+enclosed in double quote
+"string"
+a subtype of vectors
+it evaluate to self, like number
+string not symbols
+
+EE (stringp)
+test is a string
+e.g
+(stringp "is a string?")
+EE
+'funcall' 
+usage: like apply, (funcall #'+ 1 2)
+       note the arguments are separately no list
+
+EE 'format'
+通常返回nil，但是最为附效应，会输出到display
+or file.
+first argument is T : want to write where(display)
+second argument is a string. a format control string.
+,this stirng can contain formatting directives.
+formatting directive: begin with a tilde, "~" character.
+EE
+'null'
+(null obj)
+Retrun: true  if obj is a NULL, and NIL otherwise
+
+EE
+'lenght'
+usage: (lenght list)
+    return the number of top-cell of the list
+EE
+'&optional' 
+EE
+'&optional' 可选参数
+usage: (defun name(x &optional (r1 1) (r2 2)))
+可选参数可以设置默认参数，如果不设置 为nil
+和fprintf 相似。
+第一个是要输出的地方，第二个式格式化字符串
+～like % in C
+
+EE 'lambda'
+lambda is not a function
+format directives:
+LISP   C
+~% , \n ;;new line
+~& 移动到新行，除非已在一行的开始
+~S 站位符 like %d, %u ... in C
+~A 在替换string时不输出“”, ~S 输出
+
+每出现一个~S, format 就会要求一个额外的参数，like C
+~S会用额外的参赛代替~S,在string中。
+~S is S-expression. or symbolic expression.
+也就是说会用对应的值来替换~S
+.e.g
+(format T "~&1+1=~S" (+ 1 1))
+
+EE 'read'
+从键盘读取一个输入，给一个obj
+the obj 不需要‘ 因为read 不会对他求值
+e.g(setf x (read)))
+一个read 返回得值是一个list 类型的值
+EE
+'random'
+usage: (random 20)
+return zero up to 20 but not include
+
+EE
+'setf'
+change a virale value
+use setf with globle viralbe
+
+EE 'yes-or-no-p'
+使用一个format string 作为参赛，
+让用户输入yes,or no. 输入yes,返回T
+on 返回nil。 其他提示再次输入。
+e.g
+(yes-or-no-p "~&~A enter:" "lili")
+EE
+'max'
+'min'
+
+EE 'y-or-n-p'
+like a shorter form of yes-or-no-p
+type y or n
+EE
+'apropos'
+usage:(apropos "str")
+返回所有包含str的symbols
+`
+EE
+'subst'
+替换
+usage: (subst 'new 'old '(in this list))
+
+EE
+'sublis'
+多种替换两个input 1 a table that constans
+show entries are dotted pairs
+e.g.
+(sublis '((a . b) (x . y)) '(a is x ))
+EE 'with-open-file'
+open files for putput 
+使用key-argument ：DIRECTION :OUTPUT
+e.g 
+(with-open-file (fs "~/with-open-file"
+                 :direction :output)
+  (format fs "xxx"))
+fs 就相当于file的handle
+:direction set :output
+:ouput is only writing to file, 
+
+
+EE 'dribble'
+把和交互的输入记录到一个文件中
+e.g
+;;;start records
+(dribble "clisp.log")
+;;;end records
+(dribble)
+EE
+'key argument'
+key argument always evalue to themselves,
+    so they dont need to be quoted
+e.g.
+(remove 'a '(a b c de a) :count 2)
+;; count is remove count 
+
+EE
+'type-of'
+shows that the object is of type
+e.g(type-of cons)
+
+EE
+'find-if'
+usage: (find-if #'predicate list)
+return: the first element of the list for
+which the predicate return true(any non-NIL value)
+e.g.
+(find-if #'(lab
+
+EE
+'remove-if'
+'remove-if-not'
+形式和find-if 一样
+
+EE
+;;predicates
+'plusp'
+'oddp'
+'numberp'
+'symbolp'
+'zerop'
+
+EE
+'reduce'
+return a single result.
+reduce must be given a function that
+accepts two inputs.
+e.g.
+(reduce #'+ '(3 4 5))
+
+EE
+'every'
+take a predicate and  list(s) as input. 
+It return T if there is no element that
+causes the predicate to returen false.
+
+
+//io
+EE format 'prefix parameters'
+有些指示符接受一些前缀参数来指定他的行为
+prefix parametes appear betweent ~ and the directive
+1.宽带前缀 ~10S like %10s in C
+
+~D 可以是integer 以10，2 8 16 甚至罗马字符打印
+~F 打印固定格式的浮点数字,和C 从的%f一样，可以接受前缀参数
+e.g ~5,2F like %5.2f in C 打印最多5位数，小数点后2位
+
+EE 'terpri'
+stands for terminate print
+
+EE 'prin1'
+like ~S
+return their first argument
+
+EE 'princ'
+like ~A
+return their first argument
+
+EE 'print'
+包含 terpri, print1, printc 
+他用terpri 换行
+用print1 prints argument
+用printc prints a space
+
+EE handling 'EOF'
+当到文件结束时，read会生成一个end-of-file error.
+read retrun a special value, indicate eof.
+read 有两个额外的参数，
+一个 nil， 指明不生成error
+另一个是我们想作为eof的指示值.
+一个好的eof indicateor 是一个freshly generate cons cell
+us eq rather than equal to make sure that exactly returned
+比较的是address
+(seft *eof* (list '$eof$)) ;;set eof indicateor
+(let ((result (read fd nil *eof*)))
+ (if (eq result *eof*)
+  nil
+  (cons result (...))
+
+EE 'thunk'
+a function without arguments is commonly called a thunk
+or a suspension
+
+EE 'nullary function'
+no argument functions called nullary
+
+EE (incf var [num]) 
+var += num
+如果不指定num +=1
+
+EE (decf var [num]) 
+var -= num
+如果不指定num -=1

@@ -1,0 +1,118 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A	chapter9.scm	/^(define A$/;"	f
+BUILD	chapter9.scm	/^(DEFINE BUILD$/;"	f
+C	chapter9.scm	/^(define C$/;"	f
+SHIFT	chapter9.scm	/^(DEFINE SHIFT$/;"	f
+a-friend	chapter8.scm	/^(define a-friend$/;"	f
+a-pair?	chapter9.scm	/^(define a-pair?$/;"	f
+aa?	chapter.scm	/^(define (aa? a b) (+ a b))$/;"	f
+add1	chapter4.scm	/^(define add1$/;"	f
+add1	chapter8.scm	/^(define add1$/;"	f
+addtup	chapter4.scm	/^(define addtup$/;"	f
+all-nums	chapter4.scm	/^(define all-nums$/;"	f
+atom-to-function	chapter8.scm	/^(define atom-to-function$/;"	f
+atom?	chapter3.scm	/^(define atom?$/;"	f
+atom?	chapter5.scm	/^(define atom?$/;"	f
+atom?	chapter6.scm	/^(define atom?$/;"	f
+atom?	chapter7.scm	/^(define atom?$/;"	f
+atom?	chapter8.scm	/^(define atom?$/;"	f
+atom?	chapter9.scm	/^(define atom?$/;"	f
+bb*	chapter.scm	/^(define (bb* a b) (- a b))$/;"	f
+build	chapter7.scm	/^(define build$/;"	f
+cc*	chapter.scm	/^(define (cc* a b) (* a b))$/;"	f
+eq?-c	chapter8.scm	/^(define eq?-c$/;"	f
+eq?-salad	chapter8.scm	/^(define eq?-salad (eq?-c 'salad))$/;"	f
+eq?-tuna	chapter8.scm	/^(define eq?-tuna$/;"	f
+eqan?	chapter4.scm	/^(define eqan? $/;"	f
+eqlist?	chapter5.scm	/^(define eqlist?$/;"	f
+eqset?	chapter7.scm	/^(define eqset?$/;"	f
+equal?	chapter5.scm	/^(define equal? $/;"	f
+eternity	chapter9.scm	/^(define eternity$/;"	f
+even?	chapter8.scm	/^(define even?$/;"	f
+evens-only*	chapter8.scm	/^(define evens-only*$/;"	f
+first	chapter7.scm	/^(define first$/;"	f
+firsts	chapter3.scm	/^(define firsts$/;"	f
+firsts	chapter7.scm	/^(define firsts$/;"	f
+fullfun?	chapter7.scm	/^(define fullfun?$/;"	f
+fun	chapter8.scm	/^(define fun$/;"	f
+fun?	chapter7.scm	/^(define fun?$/;"	f
+insert-g	chapter8.scm	/^(define insert-g$/;"	f
+insertL	chapter3.scm	/^(define insertL$/;"	f
+insertL	chapter8.scm	/^(define insertL (insert-g seqL))$/;"	f
+insertL	chapter8.scm	/^(define insertL$/;"	f
+insertL*	chapter5.scm	/^(define insertL*$/;"	f
+insertL-f	chapter8.scm	/^(define insertL-f$/;"	f
+insertR	chapter3.scm	/^(define insertR$/;"	f
+insertR	chapter8.scm	/^(define insertR (insert-g seqR))$/;"	f
+insertR*	chapter5.scm	/^(define insertR*$/;"	f
+insertR-f	chapter8.scm	/^(define insertR-f$/;"	f
+intersect	chapter7.scm	/^(define intersect$/;"	f
+intersect?	chapter7.scm	/^(define intersect?$/;"	f
+intersectall	chapter7.scm	/^(define intersectall$/;"	f
+keep-looking	chapter9.scm	/^(define keep-looking$/;"	f
+lat?	chapter3.scm	/^(define lat?$/;"	f
+latest-friend	chapter8.scm	/^(define latest-friend$/;"	f
+length*	chapter9.scm	/^(define length*$/;"	f
+looking	chapter9.scm	/^(define looking$/;"	f
+makeset	chapter7.scm	/^(define makeset$/;"	f
+member*	chapter5.scm	/^(define member*$/;"	f
+member?	chapter3.scm	/^(define member?$/;"	f
+member?	chapter7.scm	/^(define member?$/;"	f
+multiinsertL	chapter3.scm	/^(define multiinsertL (lambda (new old lat)$/;"	f
+multiinsertLR	chapter8.scm	/^(define multiinsertLR$/;"	f
+multiinsertLR-co	chapter8.scm	/^(define multiinsertLR-co$/;"	f
+multiinsertR	chapter3.scm	/^(define multiinsertR$/;"	f
+multirember	chapter3.scm	/^(define multirember$/;"	f
+multirember	chapter7.scm	/^(define multirember$/;"	f
+multirember-T	chapter8.scm	/^(define multirember-T$/;"	f
+multirember-co	chapter8.scm	/^(define multirember-co$/;"	f
+multirember-eq?	chapter8.scm	/^(define multirember-eq? (multirember-f eq?))$/;"	f
+multirember-f	chapter8.scm	/^(define multirember-f$/;"	f
+new-friend	chapter8.scm	/^(define new-friend$/;"	f
+no-nums	chapter4.scm	/^(define no-nums$/;"	f
+numbered?	chapter6.scm	/^(define numbered?$/;"	f
+o*	chapter4.scm	/^(define o*$/;"	f
+o+	chapter4.scm	/^(define o+$/;"	f
+o-	chapter4.scm	/^(define o-$/;"	f
+occur	chapter4.scm	/^(define occur$/;"	f
+occur*	chapter5.scm	/^(define occur*$/;"	f
+pick	chapter4.scm	/^(define pick$/;"	f
+pick	chapter9.scm	/^(define pick$/;"	f
+rember	chapter3.scm	/^(define rember$/;"	f
+rember*	chapter5.scm	/^(define rember*$/;"	f
+rember-eq?	chapter8.scm	/^(define rember-eq? (rember-f eq?))$/;"	f
+rember-f	chapter8.scm	/^(define rember-f$/;"	f
+rempick	chapter4.scm	/^(define rempick$/;"	f
+revpair	chapter7.scm	/^(define revpair$/;"	f
+revpair	chapter9.scm	/^(define revpair$/;"	f
+revrel	chapter7.scm	/^(define revrel $/;"	f
+revrel	chapter7.scm	/^(define revrel$/;"	f
+second	chapter7.scm	/^(define second $/;"	f
+seconds	chapter7.scm	/^(define seconds$/;"	f
+seqL	chapter8.scm	/^(define seqL$/;"	f
+seqR	chapter8.scm	/^(define seqR$/;"	f
+seqS	chapter8.scm	/^(define seqS$/;"	f
+seqrem	chapter8.scm	/^(define seqrem$/;"	f
+set?	chapter7.scm	/^(define set?$/;"	f
+show-friend	chapter8.scm	/^(define show-friend$/;"	f
+shuffle	chapter9.scm	/^(define shuffle$/;"	f
+sub1	chapter4.scm	/^(define sub1$/;"	f
+subset?	chapter7.scm	/^(define subset?$/;"	f
+subst	chapter3.scm	/^(define subst$/;"	f
+subst	chapter8.scm	/^(define subst (insert-g seqS))$/;"	f
+subst*	chapter5.scm	/^(define subst*$/;"	f
+subst2	chapter3.scm	/^(define subst2$/;"	f
+third	chapter7.scm	/^(define third $/;"	f
+three	chapter8.scm	/^(define three$/;"	f
+tup+	chapter4.scm	/^(define tup+ $/;"	f
+union	chapter7.scm	/^(define union$/;"	f
+value	chapter6.scm	/^(define value$/;"	f
+value	chapter8.scm	/^(define value$/;"	f
+value1	chapter6.scm	/^(define value1$/;"	f
+weight*	chapter9.scm	/^(define weight*$/;"	f
+yyy	chapter8.scm	/^(define yyy$/;"	f
